@@ -13,7 +13,7 @@
 
 ### **Usage:**
 
-**Step 1:** Firstly, open the "system_conditions.json" file and alter the 6 system conditions and simulation to your specificed values. Note that:
+**Step 1:** Firstly, open the "system_conditions.json" file and alter the 6 system conditions and simulation to your specificed values. Note the ranges of the values:
 
 * Simulation time (sim_time_seconds): number > 0.
 
