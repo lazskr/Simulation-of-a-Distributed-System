@@ -11,7 +11,7 @@
 - SimPy
   - Install with: *pip install simpy*
 
-### **Usage:**
+### **How to use the program:**
 
 **Step 1:** Firstly, open the "system_conditions.json" file and alter the 6 system conditions and simulation time to your specificed values. Note the ranges of the values:
 
