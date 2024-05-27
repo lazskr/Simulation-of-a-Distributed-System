@@ -3,7 +3,6 @@ import simpy
 import random 
 import sys 
 import json  
-random.seed(42)
 
 class Nodes(object):
     
