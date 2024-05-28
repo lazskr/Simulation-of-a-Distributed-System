@@ -34,7 +34,7 @@ class Nodes(object):
         self.last_rb_checkpoint = None 
         self.other_nodes_rb_checkpoints = [] 
         self.if_rollback_in_rollback = False 
-        self.total_checkpoints_wasted = 0 #number of checkpoints wasted per node 
+        self.total_tasks_wasted = 0 #number of checkpoints wasted per node 
     
     #creates the lists which the nodes will use to keep track of each other's most recent rollback checkpoint 
     def create_rollback_lists(self):
@@ -209,7 +209,7 @@ class Nodes(object):
             sys.stdout.flush()
             print('\n')
             difference = self.task - rollback_task
-            self.total_checkpoints_wasted += difference
+            self.total_tasks_wasted += difference
             self.num_rollbacks += 1
             if not(self.is_rollback): #not in a rollback 
                self.is_rollback = True 
@@ -260,7 +260,7 @@ class Nodes(object):
     
     #Function which returns the total cycles wasted 
     def return_wasted_cycles(self):
-         return self.total_checkpoints_wasted * self.task_length
+         return self.total_tasks_wasted * self.task_length
     
     #Debugging: 
     def print_rv(self):
@@ -352,7 +352,7 @@ class DistributedSystem(object):
             cur_task += 1   
     
     #Function which returns back the total number of tasks completed     
-    def return_total_checkpoints(self):
+    def return_tasks_completed(self):
         checkpoints = 0 
         cur_task = 0 #if one of n nodes does not have the task for RV, then exit the loop and return throughput 
         while True:
@@ -430,7 +430,7 @@ def run_simulation(inputs):
     print(f"The total number of times that data was shared was: {DS.return_total_data_shared()}")
     print(f"The rate at which data was shared by a node was every {(DS.return_total_data_shared() / sim_time):02.2f} seconds")
     print(f"The total cycle throughput was: {DS.calculate_and_return_throughput()} cycles")
-    print(f"The total number of tasks completed was: {DS.return_total_checkpoints()}")
+    print(f"The total number of tasks completed was: {DS.return_tasks_completed()}")
     print(f"The total wasted cycles was: {DS.total_cycles_wasted()} cycles")
     print(f"The total number of expected values checked was: {DS.return_num_expected_values_checked()}")
     
