@@ -430,8 +430,8 @@ def run_simulation(inputs):
     print(f"The total number of times that data was shared was: {DS.return_total_data_shared()}")
     print(f"The rate at which data was shared by a node was every {(DS.return_total_data_shared() / sim_time):02.2f} seconds")
     print(f"The total cycle throughput was: {DS.calculate_and_return_throughput()} cycles")
-    print(f"The total number of tasks completed was: {DS.return_tasks_completed()}")
-    print(f"The total wasted cycles was: {DS.total_cycles_wasted()} cycles")
+    print(f"The total number of overall tasks completed was: {DS.return_tasks_completed()}")
+    print(f"The total number of wasted cycles was: {DS.total_cycles_wasted()} cycles")
     print(f"The total number of expected values checked was: {DS.return_num_expected_values_checked()}")
     
     # Debugging: final EV and RV dictionaries of each node 

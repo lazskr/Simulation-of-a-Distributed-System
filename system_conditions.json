@@ -3,7 +3,7 @@
     "number_of_nodes": 2, 
     "node_task_lengths": [4, 4],
     "node_cpu_speeds": [2, 2], 
-    "predicted_error_rate": 2, 
+    "predicted_error_rate": 10, 
     "network_delay": 0.2, 
     "rollback_cost": 1
 }
