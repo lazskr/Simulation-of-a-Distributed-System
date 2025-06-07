@@ -1,11 +1,9 @@
-
 import simpy 
 import random 
 import sys 
 import json  
 
-class Nodes(object):
-    
+class Nodes:  
     def __init__(self, node_identifier, task_length, cpu_speed, predicted_error_rate, network_delay, rollback_cost, num_nodes, env, start_nodes):
         # User inputs (system conditions)
         self.predicted_error_rate = predicted_error_rate
