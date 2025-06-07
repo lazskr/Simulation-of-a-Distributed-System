@@ -4,6 +4,7 @@ import sys
 import json  
 
 class Nodes:  
+    
     def __init__(self, node_identifier, task_length, cpu_speed, predicted_error_rate, network_delay, rollback_cost, num_nodes, env, start_nodes):
         # User inputs (system conditions)
         self.predicted_error_rate = predicted_error_rate
@@ -90,7 +91,6 @@ class Nodes:
         while True:
             try:        
                 yield self.env.timeout(self.calculation_time)
-                self.print_calculate_time()
                 # Creating new task dictionary for task 
                 if self.task not in self.received_values:
                     self.received_values[self.task] = {}  
